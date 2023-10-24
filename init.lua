@@ -132,11 +132,17 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'tjdevries/colorbuddy.nvim'
+  },
+
+  {
+    'svrana/neosolarized.nvim',
+    opts = {
+      background_set = true
+    },
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'NeoSolarized'
     end,
   },
 
@@ -253,6 +259,10 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+vim.o.background = "dark"
+require('colorbuddy').setup()
+require('neosolarized').setup()
 
 -- [[ Basic Keymaps ]]
 
